@@ -15,7 +15,7 @@ const Destinations = () => {
     const fetchDestinations = async () => {
       setLoading(true);
       try {
-        let url = 'http://localhost:5000/api/destinations?';
+        let url = 'https://wanderway-travels-3.onrender.com/api/destinations?';
         if (search) url += `search=${search}&`;
         if (activeCategory !== 'All') url += `type=${activeCategory}`;
         
