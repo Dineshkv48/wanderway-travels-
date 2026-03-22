@@ -17,8 +17,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    
-    const url = isLogin ? 'http://localhost:5000/api/auth/login' : 'http://localhost:5000/api/auth/register';
+    const url = isLogin 
+  ? 'https://wanderway-travels-3.onrender.com/api/auth/login' 
+  : 'https://wanderway-travels-3.onrender.com/api/auth/register';
     const payload = isLogin ? { email, password } : { email, password, name };
 
     try {
