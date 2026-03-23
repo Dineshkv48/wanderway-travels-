@@ -11,7 +11,7 @@ const DestinationDetail = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/destinations/${id}`)
+    fetch(`https://wanderway-travels-3.onrender.com/api/destinations/${id}`)
       .then(res => res.json())
       .then(data => {
         setDest(data);
@@ -109,7 +109,7 @@ const DestinationDetail = () => {
 
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontWeight: 600 }}>Highlights</h3>
             <div className="flex flex-wrap gap-2 mb-4" style={{ marginBottom: '3rem' }}>
-              {['Burj Khalifa', 'Desert Safari', 'Palm Jumeirah', 'Gold Souk'].map(h => (
+              {(dest.highlights && dest.highlights.length > 0 ? dest.highlights : [dest.name]).map(h => (
                 <div key={h} className="glass-card flex items-center gap-1 text-muted" style={{ padding: '0.6rem 1rem', borderRadius: '12px', fontSize: '0.9rem' }}>
                   <Heart size={14} color="#d946ef" /> {h}
                 </div>
