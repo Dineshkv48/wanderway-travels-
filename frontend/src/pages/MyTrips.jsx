@@ -20,7 +20,7 @@ const MyTrips = () => {
 
   const fetchTrips = () => {
     setLoading(true);
-    fetch(`http://localhost:5000/api/trips/${user.id}`)
+    fetch(`https://wanderway-travels-3.onrender.com/api/trips/${user.id}`)
       .then(res => res.json())
       .then(data => {
         setTrips(data);
@@ -31,7 +31,7 @@ const MyTrips = () => {
 
   const handleDelete = async (tripId) => {
     try {
-      await fetch(`http://localhost:5000/api/trips/${tripId}`, { method: 'DELETE' });
+      await fetch(`https://wanderway-travels-3.onrender.com/api/trips/${tripId}`, { method: 'DELETE' });
       fetchTrips();
     } catch (err) {
       console.error(err);

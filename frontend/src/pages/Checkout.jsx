@@ -26,7 +26,7 @@ const Checkout = () => {
       navigate('/login');
       return;
     }
-    fetch(`http://localhost:5000/api/destinations/${id}`)
+    fetch(`https://wanderway-travels-3.onrender.com/api/destinations/${id}`)
       .then(res => res.json())
       .then(data => {
         setDest(data);
@@ -42,7 +42,7 @@ const Checkout = () => {
     // Simulate payment processing delay
     setTimeout(async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/trips', {
+        const res = await fetch('https://wanderway-travels-3.onrender.com/api/trips', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
